@@ -7,14 +7,14 @@ django-embed9
 Requirements
 ============
 
-- `django.contrib.sites <https://docs.djangoproject.com/en/1.7/ref/contrib/sites/>`_
+- `django.contrib.sites <https://docs.djangoproject.com/en/2.2/ref/contrib/sites/>`_
 
 Installation
 ============
 
 - Install via pip::
 
-    pip install -e git+git://github.com/adawg4/django-embed9.git@master
+    pip install -e git+git://github.com/adawg4/django-embed9.git@master#egg=django-embed9
 
 - Add ``embed9`` to your ``INSTALLED_APPS``
 
