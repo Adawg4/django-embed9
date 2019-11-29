@@ -14,7 +14,7 @@ Installation
 
 - Install via pip::
 
-    pip install django-embed9
+    pip install -e git+git://github.com/adawg4/django-embed9.git@master
 
 - Add ``embed9`` to your ``INSTALLED_APPS``
 
@@ -131,4 +131,4 @@ In progress
 Notes
 =========
 
-- Tested with Python 3.4 and Django 1.7.4.
+- Tested with Python 3.6.4 d Django 2.2.7
