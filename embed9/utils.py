@@ -30,7 +30,7 @@ def get_embeddable(app_name, model_name):
     """ Return an embeddable class identified by given app and model names """
     try:
         module = import_module(app_name + '.embed')
-        embed = getattr(module, model_name + 'Embed')()
+        embed = getattr(module, settings.EMBED_MODEL)()
     except Exception as e:
         if settings.DEBUG:
             raise e
