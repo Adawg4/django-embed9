@@ -20,7 +20,7 @@ Installation
 
 - Add url pattern to your urls.py::
 
-    path('embed/', include('embed9.urls'), name='embed9'),
+   path('embed/', include(('embed9.urls','embed9'), namespace="embed9")),
 
 - Create a site in your database and set the SITE_ID setting
 
