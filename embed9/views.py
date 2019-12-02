@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response, render
+from django.template.response import TemplateResponse
 from django.template import RequestContext
 from django.contrib.sites.models import Site
 from django.urls import reverse
@@ -19,7 +20,7 @@ def widget(request, app, model, pk):
     params = get_params(embed.get_form_class(), request.GET)
     template = embed.get_widget_template()
     
-    return render(request, template, {
+    return TemplateResponse(request, template, {
         model: obj,
         'params': params,
     },)
@@ -33,7 +34,7 @@ def loader(request, app, model, pk):
     params = get_params(embed.get_form_class(), request.GET)
     template = embed.get_loader_template()
 
-    return render(request, template, {
+    return TemplateResponse(request, template, {
         model: obj,
         'widget_name': 'widget_' + model + str(pk),
         'domain': Site.objects.get_current().domain,
@@ -59,7 +60,7 @@ def preview(request, app, model, pk):
     else:
         form = embed.get_form_class()()
     
-    return render(request, template, {
+    return TemplateResponse(request, template, {
         'obj': obj,
         'form': form,
         'params': params,
