@@ -44,6 +44,7 @@ def loader(request, app, model, pk):
 
 
 def preview(request, app, model, pk):
+    print("this function is being called")
     """ Handles previewing and adjusting the widget. """
     embed, obj = common_view(app, model, pk)
     template = embed.get_form_template()
