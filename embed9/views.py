@@ -20,7 +20,6 @@ def widget(request, app, model, pk):
     embed, obj = common_view(app, model, pk)
     params = get_params(embed.get_form_class(), request.GET)
     template = embed.get_widget_template()
-    print(template)
     
     return TemplateResponse(request, template, {
         model: obj,
