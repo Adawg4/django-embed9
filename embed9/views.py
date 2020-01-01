@@ -60,7 +60,7 @@ def preview(request, app, model, pk):
             show_preview = False
     else:
         form = embed.get_form_class()()
-    
+    print(obj)
     return TemplateResponse(request, template, {
         'obj': obj,
         'form': form,

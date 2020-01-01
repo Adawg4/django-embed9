@@ -75,10 +75,8 @@ def get_params(form_class, get_dict):
 def common_view(app, model, pk):
     """ Validate passed arguments and get an embed instance and a model object """
     model_ = get_appmodel(app, model)
-    print(model_)
     embed = get_embeddable(app, model)
     obj = get_object_or_404(model_, pk=pk)
-    print(obj)
     return embed, obj
 
 
