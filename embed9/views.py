@@ -17,6 +17,7 @@ WIDGET_CACHE_TIME = getattr(settings, 'WIDGET_CACHE_TIME', 60*60)
 @xframe_options_exempt
 def widget(request, app, model, pk):
     """ Renders an iframe with the widget. """
+    embed, obj = common_view(app, model, pk)
     params = get_params(embed.get_form_class(), request.GET)
     template = embed.get_widget_template()
     print(template)
