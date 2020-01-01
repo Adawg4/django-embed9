@@ -18,7 +18,13 @@ def get_appmodel(app_name, model_name):
             app = apps.get_app_config(app_name)
         except ImproperlyConfigured:
             raise Http404
-        app_models = APPS_MODELS[app_name] = dict((model._meta.model_name, model) for model in app.models)
+        #meta has no attr to str
+        '''
+        Try without str obj err
+        '''
+        print(model._meta)
+        print(model_name)
+        app_models = APPS_MODELS[app_name] = dict((model_name, model) for model in app.models)
         
     model = app_models.get(model_name)
     if not model:
