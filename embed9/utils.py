@@ -22,7 +22,7 @@ def get_appmodel(app_name, model_name):
         '''
         Try without str obj err
         '''
-        print(model._meta)
+        #print(model._meta)
         print(model_name)
         app_models = APPS_MODELS[app_name] = dict((model_name, model) for model in app.models)
         
