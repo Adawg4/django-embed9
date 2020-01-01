@@ -16,9 +16,8 @@ def widget(obj, *args, **kwargs):
     app_name = obj._meta.app_label
     
     embed = get_embeddable(app_name, model_name)
-    template_name = embed.get_widget_template()
+    template_name = embed.get_code_template()
     t = loader.get_template(template_name)
-    print(template_name)
     form_class = embed.get_form_class()
     params = get_form_initial(form_class)
     kwparams = kwargs.pop('params', {})

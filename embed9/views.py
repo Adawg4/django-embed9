@@ -19,6 +19,7 @@ def widget(request, app, model, pk):
     """ Renders an iframe with the widget. """
     params = get_params(embed.get_form_class(), request.GET)
     template = embed.get_widget_template()
+    print(template)
     
     return TemplateResponse(request, template, {
         model: obj,
@@ -60,7 +61,6 @@ def preview(request, app, model, pk):
             show_preview = False
     else:
         form = embed.get_form_class()()
-    print(obj)
     return TemplateResponse(request, template, {
         'obj': obj,
         'form': form,
