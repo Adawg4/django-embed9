@@ -13,7 +13,7 @@ APPS_MODELS = {}
 def get_appmodel(app_name, model_name):
     """ Return a model class identified by given app and model names """
     #only works with one worded model names
-    return get_model(app_name,model_name.title())
+    return apps.get_model(app_name,model_name.title())
     '''
     app_models = APPS_MODELS.get(app_name)
     if not app_models:
