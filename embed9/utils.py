@@ -23,7 +23,7 @@ def get_appmodel(app_name, model_name):
         Try without str obj err
         '''
         #print(model._meta)
-        print(model_name)
+        #print(model_name)
         app_models = APPS_MODELS[app_name] = dict((model_name, model) for model in app.models)
         
     model = app_models.get(model_name)
@@ -76,8 +76,10 @@ def get_params(form_class, get_dict):
 def common_view(app, model, pk):
     """ Validate passed arguments and get an embed instance and a model object """
     model_ = get_appmodel(app, model)
-    embed = get_embeddable(app, model_.__name__)
+    print(model_)
+    embed = get_embeddable(app, model_)
     obj = get_object_or_404(model_, pk=pk)
+    print(obj)
     return embed, obj
 
 
